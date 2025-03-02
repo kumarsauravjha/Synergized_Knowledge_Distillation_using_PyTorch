@@ -1,14 +1,4 @@
-#Work in progress...
+Title: SynKD: A GAN-Driven Knowledge Distillation Framework for Anchor-Free Real-Time Detection on Edge Devices
 
-## Single Shot Multibox Detector
-
-Potential ideas, in a nutshell:
-1. Choosing a Lightweight Baseline: e.g., SSD-lite or YOLO-lite with a small backbone (EfficientNet family, DenseNet, ENAS for selecting ideal architecture).
-2. Adding Targeted Improvements:
-  - Introducing anchor-free heads will simplify anchor engineering.
-  - Incorporating attention or minimal Transformer blocks for better long-range context.
-  - Using strong data augmentation (Mosaic, MixUp) for better small-object coverage.
-3. Distilling from a Powerful Teacher: Training a bigger model on the same dataset and distilling the knowledge into our chosen architecture.
-4. Optimizing Speed & Size: Applying pruning and quantization to get real-time FPS on our hardware.
-5. Ablate and Validate: Thoroughly testing each component’s contribution using standard benchmarks (COCO, VOC) and real-world scenarios if possible.
-
+Abstract:
+Real-time object detection on resource-constrained edge devices demands models that balance accuracy, speed, and efficiency. While single-stage detectors like SSD excel in speed, they struggle with small objects and computational overhead. This paper proposes SynKD, a novel framework that synergizes knowledge distillation (KD), synthetic data augmentation, and anchor-free detection to address these limitations. Our key innovation lies in jointly training a two-stage teacher (Faster R-CNN) and a lightweight anchor-free student using GAN-augmented data, enabling the student to mimic the teacher’s localization precision and semantic richness while eliminating region proposal overhead. To bridge the sim2real gap, we introduce a GAN-based domain adaptor that generates small-object-enriched synthetic data, directly used for distillation. Further, we propose a gradient-sensitive pruning technique that preserves small-object detection capability post-quantization. The end-goal of this framework is to outperform state-of-the-art efficient detectors (YOLO-NAS, NanoDet) in accuracy-speed trade-offs, making it ideal for robots and autonomous systems.
