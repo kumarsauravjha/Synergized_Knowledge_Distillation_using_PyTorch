@@ -1,3 +1,5 @@
+#Work in progress...
+
 Title: SynKD: A GAN-Driven Knowledge Distillation Framework for Anchor-Free Real-Time Detection on Edge Devices
 
 Abstract:
